@@ -11,6 +11,28 @@
 |
 */
 
+/* interface */
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('interface');
 });
+
+/* criar ticker */
+
+Route::post('/criarticker','TickerController@store');
+
+/* Verficar se o tiker está atualizado ou se existe*/
+
+Route::get('/verificar','TickerController@verificar');
+
+/* Armazenar indicadores */
+
+Route::post('/armazena','IndicadoresController@armazena');
+
+/* consulta indicadores */
+
+Route::get('/consulta','IndicadoresController@consulta');
+
+/* Deletar Indicadores */
+
+Route::get('/deletar','IndicadoresController@deletar');
