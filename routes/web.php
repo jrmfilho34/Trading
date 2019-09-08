@@ -36,3 +36,11 @@ Route::get('/consulta','IndicadoresController@consulta');
 /* Deletar Indicadores */
 
 Route::get('/deletar','IndicadoresController@deletar');
+
+/* mini indice */
+
+Route::get('/mini','MiniIndiciController@show');
+
+/* mini indice */
+
+Route::get('/miniIndex','MiniIndiciController@index');

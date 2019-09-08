@@ -9,7 +9,7 @@
         <th scope="col">Smith</th>
         <th scope="col">Lucro</th>
         <th scope="col">Ação</th>
-        <th scope="col">Data</th>
+        <th scope="col">Data de atualização</th>
         </tr>
     </thead>
     <tbody>
@@ -28,8 +28,9 @@
                 <button type="button" class="btn btn-outline-info btn-sm">
                     MME50: <span class="badge badge-light">{{iten.indicadores.MME50}}</span>
                 </button>
-                <button type="button" :class="iten.indicadores.ted == 0? 'btn btn-outline-danger btn-sm': 'btn btn-outline-success btn-sm'">
-                     <i class="icofont-circled-up  icofont-2x"></i>
+                <button type="button" :class="iten.indicadores.tend == 0? 'btn btn-outline-danger btn-sm': 'btn btn-outline-success btn-sm'">
+                    Tendência:
+                     <i class="icofont-2x" :class="iten.indicadores.tend == 0? 'icofont-circled-down' : 'icofont-circled-up'"></i>
                      {{iten.indicadores.periodo}}
                 </button>
             </div>
@@ -50,24 +51,11 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { config, dom } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee, faStroopwafel, faDragon } from '@fortawesome/free-solid-svg-icons'
-import { faChessQueen } from '@fortawesome/free-solid-svg-icons'
 export default {
-    components: {
-        FontAwesomeIcon,
-        faCoffee, faStroopwafel, faDragon
-    },
     date(){
         return{
         }
     },
-      computed: {
-    queen () {
-      return faChessQueen
-    }
-  },
     mounted(){
         this.$store.dispatch('getAxios', {
             url: '/consulta',

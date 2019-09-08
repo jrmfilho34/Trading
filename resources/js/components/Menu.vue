@@ -20,6 +20,9 @@
                     Atualizar
                 </button>
             </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-warning ml-2 my-sm-0 btn-sm" href="miniIndex">Mini Indice</a>
+            </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">

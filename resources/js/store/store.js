@@ -54,8 +54,7 @@ export default new Vuex.Store({
                     var MME20 = STR.MME(array,20)
                     var MME50 = STR.MME(array,50)
                     var tendencia = STR.TENDENCIA(MME50,MME20)
-                    console.log('nome',a["Meta Data"]["2. Symbol"],t,tendencia)
-                    state.tickers.push({nome: a["Meta Data"]["2. Symbol"], preco:array[t-1] ,indicadores:{ RSI:rsi.rsi14[t-1].toFixed(2),MME20:MME20[t-1].toFixed(2),MME50:MME50[t-1].toFixed(2), periodo:tendencia[t-1].candles }, smith:0, lucro:0, acao:element.id, data: element.updated_at})
+                    state.tickers.push({nome: a["Meta Data"]["2. Symbol"], preco:array[t-1] ,indicadores:{ RSI:rsi.rsi14[t-1].toFixed(2),MME20:MME20[t-1].toFixed(2),MME50:MME50[t-1].toFixed(2),tend:tendencia[t-1].value, periodo:tendencia[t-1].candles }, smith:0, lucro:0, acao:element.id, data: element.updated_at})
                 }else{
                     state.tickers.push({nome:element.nome,indicadores:{ RSI:0,MME20:0,MME50:0, tend:tendencia[t-1].value, periodo:tendencia[t-1].candles }, smith:'erro', lucro:0, acao:element.id, data: element.updated_at})
                 }
